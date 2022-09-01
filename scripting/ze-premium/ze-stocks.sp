@@ -67,7 +67,7 @@ stock int SetClipAmmo(int client, int weapon, int ammo)
 	SetEntProp(weapon, Prop_Send, "m_iClip2", ammo);
 }
 
-stock int GetRandomsPlayer(bool alive = true)
+stock int GetRandomsPlayer(bool alive = true, bool checkBans = true)
 {
 	int[] clients = new int[MaxClients];
 	int clientCount;
@@ -77,10 +77,7 @@ stock int GetRandomsPlayer(bool alive = true)
 		if (!IsValidClient(i, _, !alive))
 			continue;
 		
-		if (g_bInfected[i] != false)
-			continue;
-		
-		if (g_bWasFirstInfected[i] != false)
+		if (checkBans && (g_bInfected[i] || g_bWasFirstInfected[i]))
 			continue;
 		
 		clients[clientCount++] = i;
@@ -276,11 +273,13 @@ void DisableTimers(int client)
 		if (H_Beacon[client] != INVALID_HANDLE)
 		{
 			delete H_Beacon[client];
+			H_Beacon[client] = INVALID_HANDLE;
 		}
 	}
 	if(H_Respawntimer[client] != INVALID_HANDLE)
 	{
 		delete H_Respawntimer[client];
+		H_Respawntimer[client] = INVALID_HANDLE;
 	}
 }
 
@@ -726,15 +725,15 @@ void DisableSpells(int client)
 void RemoveGuns(int client)
 {
 	int primweapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-	if (IsValidEdict(primweapon) && primweapon != -1)
+	if (IsValidEntity(primweapon) && primweapon != -1)
 	{
-		RemoveEdict(primweapon);
+		RemoveEntity(primweapon);
 	}
 	
 	int secweapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 	if (IsValidEdict(secweapon) && secweapon != -1)
 	{
-		RemoveEdict(secweapon);
+		RemoveEntity(secweapon);
 	}
 	
 	RemoveNades(client);
@@ -752,7 +751,7 @@ stock bool RemoveWeaponBySlot(int iClient, int iSlot)
 	int iEntity = GetPlayerWeaponSlot(iClient, iSlot);
 	if (IsValidEdict(iEntity)) {
 		RemovePlayerItem(iClient, iEntity);
-		AcceptEntityInput(iEntity, "Kill");
+		RemoveEntity(iEntity);
 		return true;
 	}
 	return false;

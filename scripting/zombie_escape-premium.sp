@@ -491,7 +491,7 @@ public void Event_RoundStart(Event event, const char[] name, bool bDontBroadcast
 				SetEntProp(i, Prop_Data, "m_takedamage", 0, 1);
 				DisableAll(i);
 				SetPlayerAsHuman(i);
-				openWeapons(i);
+				// openWeapons(i);
 				
 				if (g_bSamegun[i] == true)
 				{
@@ -601,7 +601,7 @@ public Action CMD_Weapon(int client, int args)
 		}
 		else
 		{
-			CReplyToCommand(client, " \x04[Zombie-Escape]\x01 %t", "no_human");
+			CPrintToChat(client, " \x04[Zombie-Escape]\x01 %t", "no_human");
 		}
 	}
 	return Plugin_Handled;
@@ -688,7 +688,7 @@ public Action CMD_Leader(int client, int args)
 		}
 		else
 		{
-			CReplyToCommand(client, " \x04[ZE-Leader]\x01 %t", "no_leader");
+			CPrintToChat(client, " \x04[ZE-Leader]\x01 %t", "no_leader");
 		}
 	}
 	return Plugin_Handled;
@@ -801,17 +801,17 @@ public Action CMD_GetGun(int client, int args)
 			}
 			else
 			{
-				CReplyToCommand(client, " \x04[ZE-Weapons]\x01 %t", "maxium_usages_gunmenu");
+				CPrintToChat(client, " \x04[ZE-Weapons]\x01 %t", "maxium_usages_gunmenu");
 			}
 		}
 		else
 		{
-			CReplyToCommand(client, " \x04[ZE-Weapons]\x01 %t", "choose_gun_first");
+			CPrintToChat(client, " \x04[ZE-Weapons]\x01 %t", "choose_gun_first");
 		}
 	}
 	else
 	{
-		CReplyToCommand(client, " \x04[ZE-Weapons]\x01 %t", "no_human");
+		CPrintToChat(client, " \x04[ZE-Weapons]\x01 %t", "no_human");
 	}
 	return Plugin_Handled;
 }

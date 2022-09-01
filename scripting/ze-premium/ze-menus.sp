@@ -39,7 +39,7 @@ public int mZeHandler(Menu menu, MenuAction action, int client, int index)
 					}
 					else
 					{
-						CReplyToCommand(client, " \x04[ZE-Weapons]\x01 %t", "no_human");
+						CPrintToChat(client, " \x04[ZE-Weapons]\x01 %t", "no_human");
 						openMenu(client);
 					}
 				}
@@ -287,7 +287,7 @@ public int mZeShopHandler(Menu menu, MenuAction action, int client, int index)
 						}
 						else
 						{
-							CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
+							CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
 							openShop(client);
 						}
 					}
@@ -304,7 +304,7 @@ public int mZeShopHandler(Menu menu, MenuAction action, int client, int index)
 						}
 						else
 						{
-							CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
+							CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
 							openShop(client);
 						}
 					}
@@ -321,7 +321,7 @@ public int mZeShopHandler(Menu menu, MenuAction action, int client, int index)
 						}
 						else
 						{
-							CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
+							CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
 							openShop(client);
 						}
 					}
@@ -337,13 +337,13 @@ public int mZeShopHandler(Menu menu, MenuAction action, int client, int index)
 						}
 						else
 						{
-							CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
+							CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
 							openShop(client);
 						}
 					}
 					else if (StrEqual(szItem, "menu5"))
 					{
-						CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "no_zombie");
+						CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "no_zombie");
 						openShop(client);
 					}
 				}
@@ -365,13 +365,13 @@ public int mZeShopHandler(Menu menu, MenuAction action, int client, int index)
 							}
 							else
 							{
-								CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "not_enough_infection_nades");
+								CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "not_enough_infection_nades");
 								openShop(client);
 							}
 						}
 						else
 						{
-							CReplyToCommand(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
+							CPrintToChat(client, " \x04[ZE-Shop]\x01 %t", "not_enough_money");
 							openShop(client);
 						}
 					}
@@ -450,7 +450,7 @@ public int mZeAdminHandler(Menu menu, MenuAction action, int client, int index)
 					}
 					else
 					{
-						CReplyToCommand(client, " \x04[ZE-Admin]\x01 %t", "nextround_infection_timer");
+						CPrintToChat(client, " \x04[ZE-Admin]\x01 %t", "nextround_infection_timer");
 						openAdmin(client);
 					}
 				}
@@ -637,8 +637,8 @@ public int mZeLeaderSpritesHandler(Menu menu, MenuAction action, int client, int
 				}
 				else
 				{
-					CReplyToCommand(client, " \x04[ZE-Leader]\x01 %t", "no_human");
-					CReplyToCommand(client, " \x04[ZE-Leader]\x01 %t", "no_leader");
+					CPrintToChat(client, " \x04[ZE-Leader]\x01 %t", "no_human");
+					CPrintToChat(client, " \x04[ZE-Leader]\x01 %t", "no_leader");
 				}
 			}
 		}
@@ -818,7 +818,7 @@ public int mLeaderChooseHandler(Menu menu, MenuAction action, int client, int in
 					}
 					else
 					{
-						CReplyToCommand(client, " \x04[ZE-Leader]\x01 %t", "player_is_dead");
+						CPrintToChat(client, " \x04[ZE-Leader]\x01 %t", "player_is_dead");
 						openChooseLeader(client);
 					}
 				}

@@ -77,7 +77,8 @@ public Action FirstInfection(Handle timer)
 				}
 				if(g_bInfected[i] == false)
 				{
-					PrintHintText(i, "\n<font class='fontSize-l'><font color='#FF4500'>CHOSEN GUN:</font>%s | %s", Primary_Gun[i], Secondary_Gun[i]);
+					// Nothing here.
+					// PrintHintText(i, "\n<font class='fontSize-l'><font color='#FF4500'>CHOSEN GUN:</font>%s | %s", Primary_Gun[i], Secondary_Gun[i]);
 				}
 				else
 				{
@@ -138,11 +139,18 @@ public Action FirstInfection(Handle timer)
 			if(infection <= 1)
 			{	
 				firstinfected = GetRandomsPlayer();
+				if(firstinfected == -1)
+					firstinfected = GetRandomsPlayer(_, false);
+				
 				g_bInfected[firstinfected] = true;
 				g_bFirstInfected[firstinfected] = true;
 				CS_SwitchTeam(firstinfected, CS_TEAM_T);
 				CS_RespawnPlayer(firstinfected);
+
 				RemoveGuns(firstinfected);
+				int melee = GetPlayerWeaponSlot(firstinfected, CS_SLOT_KNIFE);
+				SetEntPropEnt(firstinfected, Prop_Send, "m_hActiveWeapon", melee);
+
 				if(g_bIsLeader[firstinfected] == true)
 				{
 					g_bIsLeader[firstinfected] = false;

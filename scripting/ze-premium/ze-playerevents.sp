@@ -38,7 +38,7 @@ public void OnPlayerDeath(Handle event, char[] name, bool dontBroadcast)
 				}
 				if(GetHumanAliveCount() == 0)
 				{
-					CreateTimer(1.0, EndOfRound);
+					CreateTimer(0.1, EndOfRound);
 				}
 			}
 			else if(g_bInfected[client] == true)
@@ -67,7 +67,7 @@ public void OnPlayerDeath(Handle event, char[] name, bool dontBroadcast)
 				}
 				if(GetZombieAliveCount() == 0)
 				{
-					CreateTimer(1.0, EndOfRound);
+					CreateTimer(0.1, EndOfRound);
 				}
 			}
 		}
@@ -146,6 +146,10 @@ public Action OnTakeDamage(int victim, int &attacker, int &inflictor, float &dam
 						DisableTimers(victim);
 						DisableSpells(victim);
 						CS_SwitchTeam(victim, CS_TEAM_T);
+
+						int melee = GetPlayerWeaponSlot(victim, CS_SLOT_KNIFE);
+						SetEntPropEnt(victim, Prop_Send, "m_hActiveWeapon", melee);
+
 						SetPlayerAsZombie(victim);
 						EmitSoundToAll("ze_premium/ze-respawn.mp3", victim);
 						g_bInfected[victim] = true;

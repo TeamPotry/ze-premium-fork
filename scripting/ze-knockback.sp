@@ -1,4 +1,4 @@
-// Includes
+﻿// Includes
 #include <sourcemod>
 #include <sdktools>
 #include <sdkhooks>
@@ -58,7 +58,7 @@ public Action Event_PlayerHurt(Handle event, char[] name, bool dontBroadcast)
 	int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
 	if (!IsValidClient(attacker) || ZR_IsClientHuman(victim))
-		return;
+		return Plugin_Continue;
 
 	int damage = GetEventInt(event, "dmg_health");
 
@@ -90,10 +90,25 @@ public Action Event_PlayerHurt(Handle event, char[] name, bool dontBroadcast)
 	// Apply damage knockback multiplier.
 	knockback *= damage;
 
-	if (GetEntPropEnt(victim, Prop_Send, "m_hGroundEntity") == -1) knockback *= 0.5;
+	if (GetEntPropEnt(victim, Prop_Send, "m_hGroundEntity") == -1)
+		knockback *= 0.5;
 
 	// Apply knockback.
-	KnockbackSetVelocity(victim, attackerloc, clientloc, knockback);
+	char eventName[64];
+	GetEventString(event, "weapon", eventName, sizeof(eventName));
+
+	// PrintToServer("weapon: %s", eventName);
+	if(StrEqual(eventName, "inferno"))
+	{
+		// SetEventInt(event, "dmg_health", RoundFloat(damage * 0.5));
+		return Plugin_Changed;
+	}	
+	else
+	{
+		KnockbackSetVelocity(victim, attackerloc, clientloc, knockback);
+	}
+
+	return Plugin_Continue;
 }
 
 void KnockbackSetVelocity(int client, const float startpoint[3], const float endpoint[3], float magnitude)
