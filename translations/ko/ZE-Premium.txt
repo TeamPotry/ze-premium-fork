@@ -1,0 +1,238 @@
+﻿"Phrases"
+{
+	"no_human"
+	{
+		"ko"		"인간이여야 가능합니다!"
+	}
+	
+	"player_respawned"
+	{
+		"ko"		"다시 부활했습니다!"
+	}
+
+	"zombie_respawned"
+	{
+		"#format"	"{1:i}"
+		"ko"		"다시 부활했습니다! 이제 부활은 {green}{1}{default}번 남았습니다!"
+	}
+
+	"no_leader"
+	{
+		"ko"		"리더만 사용할 수 있습니다!"
+	}
+	
+	"chosen_gun"
+	{
+		"#format"	"{1:s}"
+		"ko"		"{green}{1}{default}를 선택했습니다!"
+	}
+	
+	"get_the_gun"
+	{
+		"ko"		"총을 얻기 위해선 명령어 {green}/get{default} 입력"
+	}
+	
+	"gun_uses_left"
+	{
+		"#format"	"{1:i}"
+		"ko"		"{green}선택한 총{default}을 흭득했습니다. 이제 {purple}{1}{default}번 더 흭득할 수 있습니다."
+	}
+	
+	"maxium_usages_gunmenu"
+	{
+		"ko"		"무기 메뉴의 사용 횟수가 없습니다!"
+	}
+	
+	"choose_gun_first"
+	{
+		"ko"		"일단 아무 총이나 골라보세요!"
+	}
+
+	"infected_disconnected"
+	{
+		"#format"	"{1:N},{2:i}"
+		"ko"		"감염된 플레이어 {green}{1}{default}님이 게임에서 나갔습니다. 이후 {purple}{2}{default} 라운드 동안 무조건 숙주 좀비로 감염됩니다."
+	}
+	
+	"samegun_false"
+	{
+		"ko"		"매 라운드마다 같은 총 고르기를 {green}비활성화{default}합니다!"
+	}
+	
+	"samegun_true"
+	{
+		"ko"		"매 라운드마다 같은 총 고르기를 {green}활성화{default}합니다!"
+	}
+	
+	"chosen_class"
+	{
+		"#format"	"{1:s}"
+		"ko"		"병과 {green}{1}{default}를 선택헀습니다. 부활하면 적용됩니다."
+	}
+	
+	"bought_item"
+	{
+		"#format"	"{1:s}"
+		"ko"		"상점에서 {green}{1}{default}를 구매했습니다!"
+	}
+	
+	"not_enough_money"
+	{
+		"ko"		"자금이 모자랍니다!"
+	}
+	
+	"no_zombie"
+	{
+		"ko"		"좀비여야 가능합니다!"
+	}
+	
+	"not_enough_infection_nades"
+	{
+		"ko"		"감염 수류탄이 모자라서 구매할 수 없었습니다!"
+	}
+	
+	"infection_timer_paused"
+	{
+		"#format"	"{1:N}"
+		"ko"		"관리자 {green}{1}{default}님이 감염 타이머를 멈췄습니다."
+	}
+	
+	"infection_timer_unpaused"
+	{
+		"#format"	"{1:N}"
+		"ko"		"관리자 {green}{1}{default}님이 감염 타이머를 다시 켰습니다!"
+	}
+	
+	"nextround_infection_timer"
+	{
+		"ko"		"감염 타이머가 만료되었습니다!"
+	}
+	
+	"beacon_on"
+	{
+		"ko"		"{green}비콘{default}을 켰습니다!"
+	}
+	
+	"beacon_off"
+	{
+		"ko"		"{green}비콘{default}을 껐습니다!"
+	}
+	
+	"defend_marker_spawned"
+	{
+		"ko"		"{green}수비{default} 표식을 새겼습니다!"
+	}
+	
+	"defend_marker_removed"
+	{
+		"ko"		"{green}수비{default} 표식을 지웠습니다!"
+	}
+	
+	"chosen_defend_sprite"
+	{
+		"ko"		"{green}수비{default} 이미지를 선택했습니다!"
+	}
+	
+	"chosen_follow_sprite"
+	{
+		"ko"		"{green}나를따르라{default} 이미지를 선택했습니다!"
+	}
+	
+	"sprite_removed"
+	{
+		"ko"		"이미지를 지웠습니다!"
+	}
+	
+	"swaped_to_zombies"
+	{
+		"#format"	"{1:N},{2:N}"
+		"ko"		"{green}{1}{default}님이 관리자 {2}님과 교체되어 좀비가 되었습니다!"
+	}
+	
+	"swaped_to_humans"
+	{
+		"#format"	"{1:N},{2:N}"
+		"ko"		"{green}{1}{default}님이 관리자 {2}님과 교체되어 인간이 되었습니다!"
+	}
+	
+	"removed_from_leader"
+	{
+		"ko"		"리더에서 제명되었습니다."
+	}
+	
+	"new_leader"
+	{
+		"#format"	"{1:N}"
+		"ko"		"{green}{1}{default}님이 새로운 리더가 되었습니다!"
+	}
+	
+	"leader_died"
+	{
+		"#format"	"{1:N}"
+		"ko"		"리더 {green}{1}{default}님이 사망했습니다!"
+	}
+	
+	"player_is_dead"
+	{
+		"ko"		"플레이어가 죽었거나 사람이 아닙니다!"
+	}
+	
+	"infection_ban"
+	{
+		"#format"	"{1:N},{2:i}"
+		"ko"		"{green}{1}{default}님은 이제 {purple}{2}{default} 라운드 동안 무조건 숙주 좀비로 감염됩니다!"
+	}
+	
+	"infection_unban"
+	{
+		"#format"	"{1:N}"
+		"ko"		"{green}{1}{default}님의 속주 고정 감염이 제거되었습니다."
+	}
+	
+	"infected_by_player"
+	{
+		"#format"	"{1:N}"
+		"ko"		"{green}{1}{default}님에게 감염되었습니다. 다른 사람들에게도 똑같이 하세요!"
+	}
+	
+	"infected_frag"
+	{
+		"#format"	"{1:N}"
+		"ko"		"{purple}{1}{default}님을 감염시켜 {green}1{default} 플래그를 흭득하셨습니다!"
+	}
+	
+	"first_infected"
+	{
+		"#format"	"{1:N}"
+		"ko"		"{green}{1}{default}님이 숙주 좀비가 되었습니다!"
+	}
+	
+	"riot_round"
+	{
+		"ko"		"이번 라운드는 {purple}좀비가 대량 출몰{default}합니다!!!"
+	}
+
+	"first_infected_in_seconds"
+	{
+		"#format"	"{1:i},{2:i}"
+		"ko"		"첫 감염까지: {1}초\n처벌로 인하여 앞으로 {2} 라운드 동안 감염됩니다."
+	}
+
+	"first_infection_in_seconds_banned"
+	{
+		"#format"	"{1:i}"
+		"ko"		"첫 감염까지: {1}초\n감염 확률: +0%%"
+	}
+
+	"first_infection_in_seconds_percent"
+	{
+		"#format"	"{1:i},{2:i}"
+		"ko"		"첫 감염까지: {1}초\n감염 확률: +{2}%%"
+	}
+	
+	"waiting_for_players"
+	{
+		"#format"	"{1:s},{2:i},{3:i}"
+		"ko"		"플레이어를 기다리는 중{1}\n현재 플레이어의 수: {2}/{3}"
+	}
+}
