@@ -154,9 +154,9 @@ public Action OnTakeDamage(int victim, int &attacker, int &inflictor, float &dam
 						EmitSoundToAll("ze_premium/ze-respawn.mp3", victim);
 						g_bInfected[victim] = true;
 						i_infected[attacker]++;
-						CPrintToChat(victim, " \x04[Zombie-Escape]\x01 %t", "infected_by_player", attacker);
+						CPrintToChat(victim, "{green}[Zombie-Escape]{default} %t", "infected_by_player", attacker);
 						SetEntProp(attacker, Prop_Data, "m_iFrags", GetClientFrags(attacker) + 1);
-						CPrintToChat(attacker, " \x04[Zombie-Escape]\x01 %t", "infected_frag", victim);
+						CPrintToChat(attacker, "{green}[Zombie-Escape]{default} %t", "infected_frag", victim);
 						if(i_Riotround > 0 && g_cZEZombieShieldType.IntValue > 0)
 						{
 							GivePlayerItem(victim, "weapon_shield");

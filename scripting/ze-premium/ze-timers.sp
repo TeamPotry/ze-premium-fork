@@ -45,17 +45,17 @@ public Action FirstInfection(Handle timer)
 				{
 					if(i_infectionban[i] > 0)
 					{
-						ShowHudText(i, -1, "First infected will be: %i sec\nYou will be infected [YOU HAVE: %i INFECTION BANS]", i_Infection, i_infectionban[i]);
+						ShowHudText(i, -1, "%T", "first_infected_in_seconds", i, i_Infection, i_infectionban[i]);
 					}
 					else
 					{
 						if(g_bWasFirstInfected[i] == true)
 						{
-							ShowHudText(i, -1, "First infected will be: %i sec\nChance to be infected is: +0 percent", i_Infection);
+							ShowHudText(i, -1, "%T", "first_infection_in_seconds_banned", i, i_Infection);
 						}
 						else
 						{
-							ShowHudText(i, -1, "First infected will be: %i sec\nChance to be infected is: +%.1f percent", i_Infection, newpercent);
+							ShowHudText(i, -1, "%T", "first_infection_in_seconds_percent", i, i_Infection, RoundFloat(newpercent));
 						}
 					}
 				}
@@ -73,8 +73,9 @@ public Action FirstInfection(Handle timer)
 							i_waitingforplayers = 0;
 						}
 					}
-					ShowHudText(i, -1, "Waiting for players%s\nPlayer on server: %i/%i", text, numberofplayers, g_cZEMinConnectedPlayers.IntValue);
+					ShowHudText(i, -1, "%T", "waiting_for_players", i, text, numberofplayers, g_cZEMinConnectedPlayers.IntValue);
 				}
+/*
 				if(g_bInfected[i] == false)
 				{
 					// Nothing here.
@@ -82,8 +83,9 @@ public Action FirstInfection(Handle timer)
 				}
 				else
 				{
-					PrintHintText(i, "\n<font class='fontSize-l'>You will be respawned in: <font color='#00FF00'>%i</font> sec", i_Infection);
+					// PrintHintText(i, "\n<font class='fontSize-l'>You will be respawned in: <font color='#00FF00'>%i</font> sec", i_Infection);
 				}
+*/
 			}
 		}
 	}
@@ -126,9 +128,9 @@ public Action FirstInfection(Handle timer)
 			{
 				i_Riotround = 1;
 				i_SpecialRound = 1;
-				CPrintToChatAll(" \x04[Zombie-Escape]\x01 %t", "riot_round");
-				CPrintToChatAll(" \x04[Zombie-Escape]\x01 %t", "riot_round");
-				CPrintToChatAll(" \x04[Zombie-Escape]\x01 %t", "riot_round");
+				CPrintToChatAll("{green}[Zombie-Escape]{default} %t", "riot_round");
+				CPrintToChatAll("{green}[Zombie-Escape]{default} %t", "riot_round");
+				CPrintToChatAll("{green}[Zombie-Escape]{default} %t", "riot_round");
 				EmitSoundToAll("ze_premium/ze-riotround.mp3");
 			}
 		}
@@ -229,7 +231,7 @@ public Action FirstInfection(Handle timer)
 			}
 		} 
 		while (infection < numberinfected);
-		
+/*
 		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsValidClient(i))
@@ -246,7 +248,8 @@ public Action FirstInfection(Handle timer)
 				}
 			}
 		}
-		CPrintToChatAll(" \x04[Zombie-Escape]\x01 %t", "first_infected", firstinfected);
+*/
+		CPrintToChatAll("{green}[Zombie-Escape]{default} %t", "first_infected", firstinfected);
 		KillTimer(H_FirstInfection);
 		H_FirstInfection = null;	
 	}

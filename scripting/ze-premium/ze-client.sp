@@ -7,7 +7,7 @@ public void OnClientDisconnect(int client)
 		int newiban = i_infectionban[client] + g_cZEInfectionBans.IntValue;
 		g_hDatabase.Format(szQuery, sizeof(szQuery), "UPDATE ze_premium_sql SET infectionban = '%i' WHERE steamid='%s'", newiban, szSteamId);
 		g_hDatabase.Query(SQL_Error, szQuery);
-		CPrintToChatAll(" \x04[Zombie-Escape]\x01 %t", "infected_disconnected", client, newiban);
+		CPrintToChatAll("{green}[Zombie-Escape]{default} %t", "infected_disconnected", client, newiban);
 	}
 	i_Maximum_Choose[client] = 0;
 	g_bSamegun[client] = false;
@@ -25,7 +25,7 @@ public void OnClientDisconnect(int client)
 	g_bFreezeFlash[client] = false;
 	g_bAntiDisconnect[client] = false;
 	g_bInfectNade[client] = false;
-	PrintToChatAll(" \x04[Zombie Escape] \x01Player\x06 %N\x01 has disconnected from the server!", client);
+	// PrintToChatAll("{green}[Zombie-Escape]{default} Player\x06 %N\x01 has disconnected from the server!", client);
 }
 
 public void OnClientPutInServer(int client)
@@ -47,7 +47,7 @@ public void OnClientPutInServer(int client)
 	g_bUltimate[client] = false;
 	SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamage);
 	SDKHook(client, SDKHook_WeaponCanUse, OnWeaponCanUse);
-	PrintToChatAll(" \x04[Zombie Escape] \x01Player\x06 %N\x01 has join to the server!", client);
+	// PrintToChatAll("{green}[Zombie-Escape]{default} Player\x06 %N\x01 has join to the server!", client);
 }
 
 public void OnClientPostAdminCheck(int client)

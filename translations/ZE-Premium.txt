@@ -217,4 +217,28 @@
 	{
 		"en"		"This round is {purple}ZOMBIE RIOT ROUND{default}!!!"
 	}
+
+	"first_infected_in_seconds"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"First infected will be: {1} sec\nYou will be infected [YOU HAVE: {2} INFECTION BANS]"
+	}
+
+	"first_infection_in_seconds_banned"
+	{
+		"#format"	"{1:i}"
+		"en"		"First infected will be: {1} sec\nChance to be infected is: +0 percent"
+	}
+
+	"first_infection_in_seconds_percent"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"First infected will be: {1} sec\nChance to be infected is: +{2} percent"
+	}
+	
+	"waiting_for_players"
+	{
+		"#format"	"{1:s},{2:i},{3:i}"
+		"en"		"Waiting for players{1}\nPlayer on server: {2}/{3}"
+	}
 }

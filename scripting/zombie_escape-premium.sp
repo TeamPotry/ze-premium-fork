@@ -8,7 +8,7 @@
 #include <sourcemod>
 #include <sdktools>
 #include <cstrike>
-#include <colors>
+#include <csgocolors>
 #include <clientprefs>
 #include <smlib>
 #include <sdkhooks>
@@ -601,7 +601,7 @@ public Action CMD_Weapon(int client, int args)
 		}
 		else
 		{
-			CPrintToChat(client, " \x04[Zombie-Escape]\x01 %t", "no_human");
+			CPrintToChat(client, "{green}[Zombie-Escape]{default} %t", "no_human");
 		}
 	}
 	return Plugin_Handled;
